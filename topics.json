@@ -1,0 +1,182 @@
+[
+  {
+    "id": "zomato_blinkit_live_tracking",
+    "title": "How Blinkit & Zomato track live delivery drivers smoothly on maps",
+    "category": "Mobile & Real-Time Geospatial",
+    "keywords": ["WebSockets", "MQTT", "Kalman Filtering", "Map Matching", "Dead Reckoning"]
+  },
+  {
+    "id": "google_maps_traffic_prediction",
+    "title": "How Google Maps predicts traffic and paints roads red in real time",
+    "category": "Algorithms & Big Data",
+    "keywords": ["Crowdsourced GPS probes", "Velocity graphs", "Historical ML models", "Graph routing"]
+  },
+  {
+    "id": "flipkart_big_billion_days_scale",
+    "title": "How Flipkart handles millions of concurrent checkouts during Big Billion Days without crashing",
+    "category": "Distributed Systems",
+    "keywords": ["Kafka event streaming", "Distributed Locking", "Redis Redlock", "Sharded inventory counters", "Read replicas"]
+  },
+  {
+    "id": "ai_datacenter_liquid_cooling",
+    "title": "Why AI GPU data centers consume millions of gallons of water and generate extreme heat",
+    "category": "Hardware & Infrastructure",
+    "keywords": ["NVIDIA H100 TDP", "Thermal dissipation", "Direct-to-chip liquid cooling", "Evaporative cooling towers"]
+  },
+  {
+    "id": "whatsapp_50_engineers_scale",
+    "title": "How WhatsApp served 2 Billion users with a team of only 50 engineers",
+    "category": "Architecture & Concurrency",
+    "keywords": ["Erlang BEAM VM", "Lightweight processes", "FreeBSD kernel tuning", "Zero message persistence"]
+  },
+  {
+    "id": "netflix_zero_buffering_cdn",
+    "title": "How Netflix streams 4K video instantly without buffering over home Wi-Fi",
+    "category": "Networking & Media",
+    "keywords": ["Open Connect CDN", "ISP edge appliances", "Adaptive Bitrate Streaming (ABR)", "HLS chunking"]
+  },
+  {
+    "id": "shazam_audio_fingerprinting",
+    "title": "How Shazam identifies any song in 3 seconds from noisy background audio",
+    "category": "Audio & Signal Processing",
+    "keywords": ["Spectrogram audio maps", "Constellation peak extraction", "32-bit combinatorial hashing"]
+  },
+  {
+    "id": "upi_instant_payments_architecture",
+    "title": "How UPI settles 13+ billion instant bank payments every month with near-zero latency",
+    "category": "Fintech & Distributed Systems",
+    "keywords": ["NPCI Switch", "IMPS routing", "2-factor authentication", "Distributed banking ledger"]
+  },
+  {
+    "id": "uber_dynamic_surge_pricing",
+    "title": "How Uber calculates dynamic surge pricing across entire cities in real-time",
+    "category": "Geospatial & Economics",
+    "keywords": ["Uber H3 Hexagonal Grid", "Supply-demand elasticity curves", "Spatial smoothing"]
+  },
+  {
+    "id": "cloudflare_ddos_ebpf",
+    "title": "How Cloudflare mitigates multi-terabit DDoS attacks without human intervention",
+    "category": "Cybersecurity & Networking",
+    "keywords": ["BGP Anycast routing", "eBPF XDP kernel bypass", "Automated threat heuristic engines"]
+  },
+  {
+    "id": "discord_scylladb_migration",
+    "title": "How Discord stores trillions of messages and migrated from Cassandra to ScyllaDB",
+    "category": "Databases & Storage",
+    "keywords": ["ScyllaDB Rust rewrite", "Partition hot-spots", "Garbage collection pauses", "NoSQL scaling"]
+  },
+  {
+    "id": "youtube_video_transcoding_pipeline",
+    "title": "How YouTube processes 500 hours of video uploaded every minute into multiple resolutions",
+    "category": "Media & Distributed Compute",
+    "keywords": ["MapReduce video chunking", "Distributed VP9/AV1 transcoding", "Google Borg orchestration"]
+  },
+  {
+    "id": "stripe_five_nines_uptime",
+    "title": "How Stripe achieves 99.999% uptime during Black Friday without database lockups",
+    "category": "Fintech Reliability",
+    "keywords": ["Idempotency keys", "Distributed transactions without 2PC", "Chaos engineering", "Active-active multi-region"]
+  },
+  {
+    "id": "git_internals_dag",
+    "title": "How Git works under the hood: Blobs, Trees, Commits and Content-Addressable Storage",
+    "category": "Software Engineering Fundamentals",
+    "keywords": ["SHA Directed Acyclic Graph (DAG)", "Content-addressable storage", "Delta packfiles"]
+  },
+  {
+    "id": "bittorrent_dht_distributed_download",
+    "title": "How BitTorrent downloads massive files from thousands of random strangers simultaneously",
+    "category": "P2P Protocols",
+    "keywords": ["Kademlia DHT", "Rarest-piece-first algorithm", "Tit-for-tat incentive choking"]
+  },
+  {
+    "id": "google_search_inverted_index",
+    "title": "How Google Search crawls and searches billions of web pages in under 0.2 seconds",
+    "category": "Search & Information Retrieval",
+    "keywords": ["Inverted Index", "PageRank graph traversal", "BigTable", "Document posting lists"]
+  },
+  {
+    "id": "redis_single_threaded_speed",
+    "title": "Why Redis is single-threaded yet handles over 100,000 requests per second",
+    "category": "Databases & Low-Level OS",
+    "keywords": ["epoll / kqueue I/O Multiplexing", "In-memory cache line alignment", "Zero context switching"]
+  },
+  {
+    "id": "zoom_packet_loss_recovery",
+    "title": "How Zoom delivers crisp video calls even when your Wi-Fi suffers 50% packet loss",
+    "category": "WebRTC & Networking",
+    "keywords": ["Scalable Video Coding (SVC)", "UDP over TCP fallback", "Forward Error Correction (FEC)"]
+  },
+  {
+    "id": "instagram_3_engineers_scale",
+    "title": "How Instagram handled 14 million users with only 3 engineers and simple architecture",
+    "category": "Startup Engineering",
+    "keywords": ["PostgreSQL table sharding", "Memcached layer", "Django on AWS EC2", "Simplicity over microservices"]
+  },
+  {
+    "id": "url_shortener_system_design",
+    "title": "How URL shorteners like Bitly generate unique 7-character links for billions of URLs",
+    "category": "System Design Basics",
+    "keywords": ["Base62 encoding", "Snowflake 64-bit ID generation", "Redis bloom filters"]
+  },
+  {
+    "id": "twitter_fanout_architecture",
+    "title": "How Twitter delivers a celebrity's tweet to 100 million timelines in 2 seconds",
+    "category": "Social Media Systems",
+    "keywords": ["Fan-out on write vs Fan-out on read", "Redis timeline caches", "Celebrity hybrid timeline model"]
+  },
+  {
+    "id": "google_docs_collaborative_editing",
+    "title": "How Google Docs lets 50 people type simultaneously without conflicting or overwriting",
+    "category": "Collaboration & Math",
+    "keywords": ["Operational Transformation (OT)", "CRDTs (Conflict-free Replicated Data Types)", "Vector clocks"]
+  },
+  {
+    "id": "tesla_autopilot_vision_pipeline",
+    "title": "How Tesla Autopilot processes 8 cameras simultaneously on an in-car chip in real-time",
+    "category": "Computer Vision & Edge AI",
+    "keywords": ["HydraNets shared neural backbone", "3D Occupancy networks", "Custom FSD edge silicon"]
+  },
+  {
+    "id": "spacex_falcon9_landing_software",
+    "title": "How SpaceX Falcon 9 autonomously lands back on a drone ship in the middle of the ocean",
+    "category": "Aerospace & Embedded Systems",
+    "keywords": ["G-FOLD convex optimization", "Triple-redundant x86 Linux computers", "Lock-step voting logic"]
+  },
+  {
+    "id": "apple_airtag_ble_mesh",
+    "title": "How Apple AirTags track your lost keys globally without GPS or cellular chips",
+    "category": "IoT & Cryptography",
+    "keywords": ["Bluetooth Low Energy (BLE) beacons", "Crowdsourced Apple Mesh network", "Rotating public key cryptography"]
+  },
+  {
+    "id": "kafka_zero_copy_architecture",
+    "title": "How Apache Kafka pushes gigabytes per second through the Linux OS with Zero-Copy",
+    "category": "Operating Systems & Storage",
+    "keywords": ["OS PageCache", "sendfile() kernel zero-copy syscall", "Sequential disk I/O"]
+  },
+  {
+    "id": "stock_exchange_microsecond_matching",
+    "title": "How Stock Exchanges match millions of trades in microseconds without database locks",
+    "category": "High Frequency Trading (HFT)",
+    "keywords": ["LMAX Disruptor ring buffer", "Solarflare kernel bypass", "FPGA hardware order matching"]
+  },
+  {
+    "id": "airplane_1980s_chips_safety",
+    "title": "Why modern commercial airplanes still fly on 1980s computer chips",
+    "category": "Hardware & Embedded Systems",
+    "keywords": ["Radiation Single Event Upsets (SEU)", "Triple-modular redundancy", "DO-178C formal verification"]
+  },
+  {
+    "id": "truecaller_instant_caller_id",
+    "title": "How Truecaller identifies an unknown caller before your phone screen even lights up",
+    "category": "Big Data & Graph DB",
+    "keywords": ["Crowdsourced contact graphs", "Bloom filters for spam score", "High-speed in-memory prefix trie"]
+  },
+  {
+    "id": "spotify_discover_weekly_algorithm",
+    "title": "How Spotify's algorithm knows your exact music taste better than your best friend",
+    "category": "Recommendation Engines",
+    "keywords": ["Collaborative Filtering", "Audio Spectrogram CNNs", "Word2Vec playlist vectorization"]
+  }
+]
