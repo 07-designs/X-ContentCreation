@@ -90,21 +90,31 @@ Remember:
 - Strict limit: Every single tweet MUST be under {MAX_CHARS_PER_TWEET} characters.
 """
 
-        logger.info(f"Generating thread for topic: {title} using {self.model_name}...")
-        
-        response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                system_instruction=SYSTEM_PROMPT,
-                response_mime_type="application/json",
-                temperature=0.7,
-            )
-        )
+        candidate_models = [self.model_name, "gemini-2.0-flash", "gemini-1.5-flash"]
+        # Deduplicate while preserving order
+        models_to_try = list(dict.fromkeys(candidate_models))
 
-        tweets = self._parse_response(response.text)
-        validated_tweets = self._validate_and_sanitize_tweets(tweets, title)
-        return validated_tweets
+        last_error = None
+        for model in models_to_try:
+            try:
+                logger.info(f"Generating thread for topic: '{title}' using {model}...")
+                response = self.client.models.generate_content(
+                    model=model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=SYSTEM_PROMPT,
+                        response_mime_type="application/json",
+                        temperature=0.7,
+                    )
+                )
+                tweets = self._parse_response(response.text)
+                validated_tweets = self._validate_and_sanitize_tweets(tweets, title)
+                return validated_tweets
+            except Exception as e:
+                logger.warning(f"Model {model} failed with: {e}. Trying next available fallback model...")
+                last_error = e
+
+        raise last_error
 
     def _parse_response(self, text: str) -> List[str]:
         """Safely parses JSON array from LLM output."""

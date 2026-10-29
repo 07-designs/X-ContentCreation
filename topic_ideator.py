@@ -64,24 +64,34 @@ REQUIREMENTS:
 Return ONLY the raw JSON object.
 """
 
-        logger.info("Brainstorming a fresh autonomous topic using Gemini...")
-        response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                system_instruction=TOPIC_IDEATOR_SYSTEM_PROMPT,
-                response_mime_type="application/json",
-                temperature=0.85,  # Higher creativity for topic ideation
-            )
-        )
+        candidate_models = [self.model_name, "gemini-2.0-flash", "gemini-1.5-flash"]
+        models_to_try = list(dict.fromkeys(candidate_models))
 
-        text = response.text.strip()
-        if text.startswith("```json"):
-            text = text[7:]
-        elif text.startswith("```"):
-            text = text[3:]
-        if text.endswith("```"):
-            text = text[:-3]
-        
-        data = json.loads(text.strip())
-        return data
+        last_error = None
+        for model in models_to_try:
+            try:
+                logger.info(f"Brainstorming a fresh autonomous topic using {model}...")
+                response = self.client.models.generate_content(
+                    model=model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=TOPIC_IDEATOR_SYSTEM_PROMPT,
+                        response_mime_type="application/json",
+                        temperature=0.85,
+                    )
+                )
+                text = response.text.strip()
+                if text.startswith("```json"):
+                    text = text[7:]
+                elif text.startswith("```"):
+                    text = text[3:]
+                if text.endswith("```"):
+                    text = text[:-3]
+                
+                data = json.loads(text.strip())
+                return data
+            except Exception as e:
+                logger.warning(f"Topic ideation with {model} failed: {e}. Trying fallback model...")
+                last_error = e
+
+        raise last_error
